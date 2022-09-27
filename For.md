@@ -19,7 +19,7 @@ val array = arrayOf("a", "b", "c")
     //a b c
 ```
 
-##Foreach문
+## Foreach문
 
 ```kt
 val numList = arrayListOf(1,2,3,4,5,6)

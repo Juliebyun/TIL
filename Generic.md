@@ -22,7 +22,7 @@ class GenericExample {
     fun function(){
         intGenericExample.genericInterfaceValue
         arrayList.add(1) //int가 선언되어 있어서 숫자만 들어가진다.
-        //String으로 바뀌면 add("skdjfls")가능.
+        //String으로 바뀌면 add("string")가능.
     }
 }
 interface GenericInterface<T>{ // T에 Int나 String같은 타입이나 심지어 클래스 이름도 들어갈 수 있다.
