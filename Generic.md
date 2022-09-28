@@ -1,5 +1,11 @@
 # Generic
 
+## Generic이란?
+- 제너릭을 통해 클래스나 메서드에서 사용할 내부 데이터 타입을 미리 지정하는 방법
+    ### 장점
+    1. 타입 안정성 증가
+    2. 객체애 대한 확장성
+
 ```kt
 class GenericExample {
     val interfaceExample = object : GenericInterface<String>{
@@ -22,7 +28,7 @@ class GenericExample {
     fun function(){
         intGenericExample.genericInterfaceValue
         arrayList.add(1) //int가 선언되어 있어서 숫자만 들어가진다.
-        //String으로 바뀌면 add("skdjfls")가능.
+        //String으로 바뀌면 add("string")가능.
     }
 }
 interface GenericInterface<T>{ // T에 Int나 String같은 타입이나 심지어 클래스 이름도 들어갈 수 있다.

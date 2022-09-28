@@ -18,6 +18,7 @@ class ApplyLetWithExample{
         g.apply {
             function()//함수
             //apply 에서는 해당 클래스의 함수인것 처럼 해당 클래스의 변수, 함수를 가져다 쓸수 있다 (private 제외)
+
         }
         with(g){
             interfaceExample
@@ -26,3 +27,17 @@ class ApplyLetWithExample{
     }
 }
 ```
+
+
+## with와 apply의 차이점
+- with는 <R>을 반환하고 apply는 <T>를 반환한다.
+- <T>는 apply 함수를 사용할 변수의 타입이다.
+```kt
+fun <T> T.apply{
+        //선언 하는 법
+    } 
+    value.apply{
+        //사용 하는 법 
+        // T는 value의 타입이 된다. 만약에 value가 Int가 되면 Int고 String이면 String이 된다.
+    }
+    ```
