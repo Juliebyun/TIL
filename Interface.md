@@ -58,7 +58,7 @@ class ButtonClick : OnClickListener{
     //var은 어디서든지 init, change 가능
     fun changeColor(){
         // interface
-//        clickValue = 3  -> val change error
+        //clickValue = 3  -> val change error
         clickValue2 = 3
     }
     //override : 부모의 필드 또는 함수를 자식 클래스

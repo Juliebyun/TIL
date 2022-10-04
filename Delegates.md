@@ -1,31 +1,37 @@
-# Delegates
-
-## Observable
-- 프로퍼티의 데이터가 변할 떄마다 callback을 받을 수 있다.
+# Delegate Pattern
+- 어떤 기능을 자신이 수행하지 않고 다른 객체에 위임하여 해당 객체가 일을 수행하도록 구성한 디자인 패턴이다 
 
 ```kt
-var observed = false
-var max: Int by Delegates.observable(0) { property, oldValue, newValue ->
-    println("Changing max to $newValue")
-    observed = true
+// delegage pattern을 쉽게 제공하는 게 by이다.
+interface Base {
+    fun print()
+}
+
+// delegate
+class BaseImpl1(val x: Int) : Base {
+    override fun print() { println("BaseImpl1 $x") }
+}
+
+// delegate
+class BaseImpl2(val x: Int) : Base {
+    override fun print() { println("BaseImpl2 $x") }
+}
+
+// delegator
+class Derived(b: Base) : Base {
+    var b: Base = b
+
+    override fun print() {
+        b.print()
+    }
+    
 }
 
 fun main() {
-    println(max) // 0
-    println("observed is ${observed}") // false
-    max = 10
-    println(max) // 10
-    println("observed is ${observed}") // true
+    val b1 = BaseImpl1(10)
+    Derived(b1).print()
+
+    val b2 = BaseImpl2(10)
+    Derived(b2).print()
+    //클래스화와 상속을 해서 코드 재활용성을 높일 수 있다.
 }
-
-//0
-//observed is false
-//Changing max to 10
-//10
-//observed is true
-
-
-//max를 10으로 변경할 때 observable{} 호출됨
-//-> 변한 값과 함께 observed is true가 나옴
-
-```
