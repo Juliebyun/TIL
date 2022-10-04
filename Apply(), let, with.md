@@ -30,8 +30,8 @@ class ApplyLetWithExample{
 
 
 ## with와 apply의 차이점
-- with는 <R>을 반환하고 apply는 <T>를 반환한다.
-- <T>는 apply 함수를 사용할 변수의 타입이다.
+- with는 R을 반환하고 apply는 T를 반환한다.
+- T는 apply 함수를 사용할 변수의 타입이다.
 ```kt
 fun <T> T.apply{
         //선언 하는 법
